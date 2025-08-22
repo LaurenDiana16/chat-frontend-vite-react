@@ -8,27 +8,12 @@ As of February 14, 2025 [Create React App was deprecated]( https://react.dev/blo
 ```bash
 npm create vite@latest <your_project_name> -- --template react
 cd <your_project_name>
+npm install
 ```
 
 ## Run a Vite project
 ```bash
-npm install
 npm run dev
 ```
 
 This will launch your Vite React application in development mode, accessible at http://localhost:5173.
-
-## Google authentication setup
-1. Add http://localhost:5173 to Authorized JavaScript Origins
-2. Add http://localhost:5173 to Authorized redirect URIs
-3. Install required packages
-
-```bash
-npm install @react-oauth/google jwt-decode
-```
-
-3. Create a .env file in your project root
-
-```bash
-VITE_GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
-```
