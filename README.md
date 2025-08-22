@@ -20,7 +20,8 @@ This will launch your Vite React application in development mode, accessible at 
 
 ## Google authentication setup
 1. Add http://localhost:5173 to Authorized JavaScript Origins
-2. Install required packages
+2. Add http://localhost:5173 to Authorized redirect URIs
+3. Install required packages
 
 ```bash
 npm install @react-oauth/google jwt-decode
