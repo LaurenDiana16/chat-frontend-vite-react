@@ -3,5 +3,16 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(),
+{
+          name: 'configure-response-headers',
+          configureServer: (server) => {
+            server.middlewares.use((_req, res, next) => {
+              // Set the COOP header to allow popups while maintaining security
+              res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
+              next();
+            });
+          },
+        },
+   ],
 })

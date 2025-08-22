@@ -1,4 +1,4 @@
-import LoginButton from './LoginButton'
+import { LoginButton } from './LoginButtonSession'
 
 export default function App() {
   return (
