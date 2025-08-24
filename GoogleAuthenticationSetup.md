@@ -26,5 +26,5 @@ VITE_GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
 ### Install required packages
 
 ```bash
-npm install @react-oauth/google jwt-decode
+npm install @react-oauth/google jwt-decode react-router-dom
 ```
