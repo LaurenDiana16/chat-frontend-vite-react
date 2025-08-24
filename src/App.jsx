@@ -1,10 +1,12 @@
-import { LoginButton } from './LoginButtonSession'
+import { Routes, Route } from 'react-router-dom'
+import LoginPage from './LoginPage'
+import DashboardPage from './DashboardPage'
 
 export default function App() {
   return (
-    <div>
-      <h1>Login with Google</h1>
-      <LoginButton />
-    </div>
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
+    </Routes>
   )
 }
