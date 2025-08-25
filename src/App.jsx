@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import LoginPage from './LoginPage'
-import DashboardPage from './DashboardPage'
+import ChatPage from './ChatPage'
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/chat" element={<ChatPage />} />
     </Routes>
   )
 }

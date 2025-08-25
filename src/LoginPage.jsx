@@ -1,30 +1,32 @@
 import React from 'react'
 import { GoogleLogin } from '@react-oauth/google'
 import { useNavigate } from 'react-router-dom'
-import { useSessionToken } from './hooks/useSessionToken'
 import './loginpage.css' 
+import config from './config.js';
+import { useSessionToken } from './hooks/useSessionToken'
+
 
 export default function LoginPage() {
-  const navigate = useNavigate()
   
+  const navigate = useNavigate()
   const { saveToken, getUserFromToken, logout } = useSessionToken()
-
   const onSuccess = (credentialResponse) => {
-   
+  
+    // Successful login
     console.log('Login Success:', credentialResponse)
     
-    // token storage, may need to send to backend
+    // Get the user
     const token = credentialResponse?.credential
     if (!token) return
-    
     saveToken(token)
     const user = getUserFromToken()
     console.log('User:', user)  
 
-    // Perform any necessary actions with the credentialResponse (e.g., send to backend)
-    
-    // Redirect to the dashboard page
-    navigate('/dashboard')
+    // Call the /api/check-user endpoint to check if user exists, if so update user
+
+
+    // Redirect to the chat page
+    navigate('/chat')
   }
 
   const onError = () => {
@@ -42,7 +44,7 @@ export default function LoginPage() {
                 <i className="fas fa-robot"></i>
               </div>
             </div>
-            <h1>NANDA<span class="accent">.</span></h1>
+            <h1>NANDA<span className="accent">.</span></h1>
             <h2>Agentic Chat Assistant</h2>
             <p>Connect with intelligent agents powered by advanced AI technology</p>
           <div className="signin-container">
@@ -50,7 +52,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <p className="terms">By signing in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
     </div>
-      )
+     )
 }
